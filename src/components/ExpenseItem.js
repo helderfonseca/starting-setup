@@ -1,15 +1,16 @@
-import './ExpenseItem.css'
+import { ExpenseDate } from './ExpenseDate';
+import './ExpenseItem.css';
 
-export function ExpenseItem({expenses}) {
+export function ExpenseItem(props) {
 
-  /*const expenseDate = new Date(2020, 4, 28);
-  const expenseTitle = "Seguro de carros";
-  const expensePrice = 250.60;*/
+  /*const month = props.expenses.date.toLocaleString("pt-PT", { month: 'long'});
+  const day = props.expenses.date.toLocaleString("pt-PT", { day: '2 digit'});
+  const year = props.expenses.date.getFullYear();*/
 
   return (
-    expenses && expenses.map(expense => {
+    props.expenses && props.expenses.map(expense => {
     return  <div key={expense.id} className='expense-item'>
-              <div>{expense.date.toLocaleDateString("pt-PT")}</div>
+              <ExpenseDate date={expense.date}/>
               <div className='expense-item__description'>
                 <h2>{expense.title}</h2>
                 <div className='expense-item__price'>${expense.price}</div>
