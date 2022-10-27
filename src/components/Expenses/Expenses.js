@@ -1,7 +1,8 @@
 import { ExpenseItem } from "./ExpenseItem";
+import { Card } from '../UI/Card';
 import './Expenses.css';
 
-export function Expenses() {
+export const Expenses = () => {
 
   const expenses = [
     {
@@ -21,8 +22,8 @@ export function Expenses() {
 
 
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem expenses={expenses}/>
-    </div>
+    </Card>
   );
 }
