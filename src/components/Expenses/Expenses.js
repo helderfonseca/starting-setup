@@ -16,10 +16,14 @@ export const Expenses = () => {
       title: 'Comida',
       price: 180.86,
       date: new Date(2021, 4, 15)
+    },
+    {
+      id: 'e3',
+      title: 'TV',
+      price: 96.53,
+      date: new Date(2020, 7, 22)
     }
   ];
-
-
 
   return (
     <Card className="expenses">

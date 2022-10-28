@@ -10,7 +10,7 @@ export const ExpenseItem = (props) => {
   //let title = props.expenses[0].title;
 
   function handleClick(e) {
-    e.preventDefault();
+    //e.preventDefault();
     //setTitle("sjdd");
     props.expenses.forEach(item => {
       //setTitle(item.title);
