@@ -16,7 +16,7 @@ form input {
   border: 0;
 }
 
-form label {
+form label, p {
   color: white;
 }
 

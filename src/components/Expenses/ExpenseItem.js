@@ -5,7 +5,6 @@ import './ExpenseItem.css';
 export const ExpenseItem = (props) => {
 
   return (
-
    
     props.expenses && props.expenses.map(expense => {
     return  <Card key={expense.id} className='expense-item'>
