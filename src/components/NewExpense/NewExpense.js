@@ -1,7 +1,7 @@
 import { ExpenseForm } from "./ExpenseForm";
 import './ExpenseForm.css';
 
-export const NewExpense = () => {
+export const NewExpense = (props) => {
 
   /*function uuidv4() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
@@ -16,7 +16,8 @@ export const NewExpense = () => {
       ...expenseData,
       id: uuid
     };
-    console.log("Expense from new Expense Component: ", newExpenseData);
+    props.onAddExpense(newExpenseData);
+    //console.log("Expense from new Expense Component: ", newExpenseData);
   };
 
   return (

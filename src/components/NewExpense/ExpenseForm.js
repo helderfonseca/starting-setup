@@ -34,7 +34,7 @@ export const ExpenseForm = (props) => {
     setDate("");
 
     props.onSaveExpenseData(expenseData);
-    console.log(expenseData);
+    //console.log(expenseData);
   }
 
   return (
@@ -47,7 +47,6 @@ export const ExpenseForm = (props) => {
                   id="expense_title"
                   value={title}
                   onChange={handleTitle}/>
-          <p>{title}</p> 
         </div>
         <div className='new_expense__control'>
           <label htmlFor="expense_amount">Amount</label>
