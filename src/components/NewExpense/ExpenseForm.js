@@ -7,7 +7,6 @@ export const ExpenseForm = (props) => {
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
 
-
   const handleTitle = event => {
     setTitle(event.target.value);
   }
@@ -25,7 +24,7 @@ export const ExpenseForm = (props) => {
 
     const expenseData = {
       title: title,
-      amount: amount,
+      price: amount,
       date: new Date(date)
     };
 
@@ -34,7 +33,6 @@ export const ExpenseForm = (props) => {
     setDate("");
 
     props.onSaveExpenseData(expenseData);
-    //console.log(expenseData);
   }
 
   return (

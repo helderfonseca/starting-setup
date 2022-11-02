@@ -1,10 +1,11 @@
 import './App.css';
+import { useState } from 'react';
 import { Expenses } from './components/Expenses/Expenses';
 import { NewExpense } from './components/NewExpense/NewExpense';
 
 const App = () => {
 
-  const expenses = [
+  const DUMMY_EXPENSES = [
     {
       id: 'e1',
       title: 'Seguros de carros',
@@ -25,16 +26,18 @@ const App = () => {
     }
   ];
 
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+
   const addExpenseData = expense => {
     console.log("In App.js");
-    //console.log(expense);
-    expenses.unshift(expense);
-    console.log(expenses);
+    setExpenses(previousExpenses => {
+      return [expense, ...previousExpenses];
+    });
   }
 
   return (
     <div className="app">
-      <h2>Coffee Shop</h2>
+      <h2>Expenses Tracker</h2>
       <NewExpense onAddExpense={addExpenseData}/>
       <Expenses items={expenses}/>
     </div>
