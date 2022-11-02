@@ -22,6 +22,14 @@ export const ExpenseForm = (props) => {
   const handleSubmit = event => {
     event.preventDefault();
 
+    if (title.length === 0) {
+      return;
+    }
+
+    if (amount.length === 0) {
+      return;
+    }
+
     const expenseData = {
       title: title,
       price: amount,
@@ -33,6 +41,7 @@ export const ExpenseForm = (props) => {
     setDate("");
 
     props.onSaveExpenseData(expenseData);
+    props.onCancel();
   }
 
   return (
@@ -43,17 +52,19 @@ export const ExpenseForm = (props) => {
           <input type="text" 
                   name="expense_title" 
                   id="expense_title"
+                  required
                   value={title}
-                  onChange={handleTitle}/>
+                  onChange={handleTitle} />
         </div>
         <div className='new_expense__control'>
           <label htmlFor="expense_amount">Amount</label>
           <input type="number" 
                   name="expense_amount" 
                   id="expense_amount" 
+                  required
                   value={amount}
                   min="0.01" step="0.01" 
-                  onChange={handleAmount}/>
+                  onChange={handleAmount} />
         </div>
         <div className='new_expense__control'>
           <label htmlFor="expense_date">Date</label>
@@ -62,7 +73,7 @@ export const ExpenseForm = (props) => {
                   id="expense_date" 
                   value={date}
                   min="01-01-2019" max="31-12-2022" 
-                  onChange={handleDate}/>
+                  onChange={handleDate} />
         </div>
         <div className='new_expense__actions'>
           <button type='submit'>Add expense</button>
