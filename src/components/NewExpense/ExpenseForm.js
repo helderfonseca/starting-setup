@@ -32,7 +32,7 @@ export const ExpenseForm = (props) => {
 
     const expenseData = {
       title: title,
-      price: amount,
+      price: +amount,
       date: new Date(date)
     };
 
